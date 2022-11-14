@@ -27,27 +27,7 @@ public class Main {
 
             String sql = "SELECT * FROM wifiTables WHERE ";
             PreparedStatement pstmt = connection.prepareStatement(sql);
-
-
-
-                   /* pstmt.setString(1, String.valueOf(distance));
-                    pstmt.setString(2, manageNo);
-                    pstmt.setString(3, reginalGu);
-                    pstmt.setString(4, wifiName);
-                    pstmt.setString(5, addressDoromung);
-                    pstmt.setString(6, address);
-                    pstmt.setString(7, installPos);
-                    pstmt.setString(8, installType);
-                    pstmt.setString(9, installManagement);
-                    pstmt.setString(10, servType);
-                    pstmt.setString(11, servLocalType);
-                    pstmt.setString(12, installYear);
-                    pstmt.setString(13, inOrOut);
-                    pstmt.setString(14, connType);
-                    pstmt.setString(15, String.valueOf(LAT));
-                    pstmt.setString(16, String.valueOf(LNT));
-                    pstmt.setString(17, work_dttm);*/
-            int res = pstmt.executeUpdate();
+            int res = pstmt.executeUpdate();  //실행결과
             connection.close();
             pstmt.close();
 
@@ -122,7 +102,6 @@ public class Main {
                     String password = "ehddn";
                     try {
                         Connection connection = DriverManager.getConnection(url2, userName, password);
-                        //Statement statement = connection.createStatement();
 
                         String sql = "INSERT INTO wifiTables VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                         PreparedStatement pstmt = connection.prepareStatement(sql);
@@ -143,32 +122,13 @@ public class Main {
                         pstmt.setString(15, String.valueOf(LNT));
                         pstmt.setString(16, work_dttm);
 
-                   /* pstmt.setString(1, String.valueOf(distance));
-                    pstmt.setString(2, manageNo);
-                    pstmt.setString(3, reginalGu);
-                    pstmt.setString(4, wifiName);
-                    pstmt.setString(5, addressDoromung);
-                    pstmt.setString(6, address);
-                    pstmt.setString(7, installPos);
-                    pstmt.setString(8, installType);
-                    pstmt.setString(9, installManagement);
-                    pstmt.setString(10, servType);
-                    pstmt.setString(11, servLocalType);
-                    pstmt.setString(12, installYear);
-                    pstmt.setString(13, inOrOut);
-                    pstmt.setString(14, connType);
-                    pstmt.setString(15, String.valueOf(LAT));
-                    pstmt.setString(16, String.valueOf(LNT));
-                    pstmt.setString(17, work_dttm);*/
                         int res = pstmt.executeUpdate();
                         connection.close();
                         pstmt.close();
 
                     } catch (SQLException e) {
                         System.out.print(e.getMessage());
-
                     }
-
                 }
             }
             catch (Exception e){
@@ -188,10 +148,7 @@ public class Main {
             saveWifiInfo(Integer.toString(i),Integer.toString(j));
             i=j++;
             j=j+1000;
-
-
         }*/
-
     }
 
 
